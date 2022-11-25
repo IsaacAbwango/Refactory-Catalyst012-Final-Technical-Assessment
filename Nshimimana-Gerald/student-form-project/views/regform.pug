@@ -1,0 +1,108 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='./css/main.css')
+  link(rel='stylesheet' href='./css/bootstrapcss/bootstrap.css')
+  title Student Registration Form
+body
+  .row
+    .col
+    .col-6(style='margin-left: 100px; margin-top: 10px;')
+      .register
+        br
+        p(style='font-size: 30px; color: white; background-color: purple;') Student Registration Form
+        .card-body(style='margin-top: 25px; font-size: 20px;')
+          form#register.form.needs-validation(method='post' name='register' action='/reg' novalidate)
+            .row
+              .mb-3.col-sm-6
+                label.form-label(for='surname') Sur name
+                input#surname.form-control(type='text' name='surname' placeholder='Enter Surname' required)
+                .valid-feedback
+                  | Looks good
+                .invalid-feedback
+                  | Invalid Field!
+            .row
+              .mb-3.col-sm-6
+                label.form-label(for='givenname') Given name
+                input#givenname.form-control(type='text' name='givenname' placeholder='Enter Given Name' required)
+                .valid-feedback
+                  | Looks good
+                .invalid-feedback
+                  | Invalid Field!
+            .row
+              .mb-3.col-sm-6
+                label(for='title') Title 
+                select#residence.drop(name='title' required)
+                  option(value='') Select Title 
+                  option(value='mr') Mr.
+                  option(value='mrs') Mrs.
+                  option(value='miss') Miss 
+                  option(value='dr') Dr.
+                  option(value='prof') Prof.
+                  option(value='eng') Eng.
+                .valid-feedback
+                  | Looks good
+                .invalid-feedback
+                  | Please fill in field
+              .mb-3.col-sm-6
+                label.form-label(for='image') Upload Photo
+                input#image.form-control(type='file' name='image' required)
+                .valid-feedback
+                  | 
+                .invalid-feedback
+                  |
+            .row
+              .mb-3.col-sm-12
+                label.form-label(for='gender') Gender:
+                .radio
+                  input#gender1(type='radio' name='gender' autocomplete='off' value='male')
+                  span Male
+                  input#gender2(type='radio' name='gender' autocomplete='off' value='female')
+                  span Female
+                .valid-feedback
+                  | Looks good
+                .invalid-feedback
+                  | Gender Must be specified! 
+              .mb-3.col-sm-6
+                label.form-label(for='dateofbirth') Date of birth
+                input#dateofbirth.form-control(type='date' name='dateofbirth' equired)
+                .valid-feedback
+                  | Looks good
+                .invalid-feedback
+                  | Select Date of Birth!
+              .mb-3.col-sm-6
+                label(for='country') Country 
+                select#residence.drop(name='country' required)
+                  option(value='') Select Country 
+                  option(value='uganda') Uganda
+                  option(value='kenya') Kenya
+                  option(value='tanzania') Tanzania 
+                  option(value='rwanda') Rwanda
+                  option(value='burundi') Burundi
+                .valid-feedback
+                  | Looks good
+                .invalid-feedback
+                  | You must Select your country of Residence!
+            .row
+              .mb-3.col-sm-12
+                label.form-label(for='residence') Place of Residence
+                input#residence.form-control(type='text' name='residence' required)
+                .valid-feedback
+                  | Looks good
+                .invalid-feedback
+                  | Invalid Field!
+            .row
+              .mb-3.col-sm-12
+                label.form-label(for='nationality') Nationality
+                input#directions.form-control(type='text' name='nationality' required)
+                .valid-feedback
+                  | Looks good
+                .invalid-feedback
+                  | Invalid Field!
+            button.btn.btn-primary(type='submit')
+              | Register
+    .col
+script(src='./js/bootstrapjs/bootstrap.bundle.js')
+script(src='./js/validate.js')

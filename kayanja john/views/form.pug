@@ -1,0 +1,81 @@
+doctype html
+head
+  title Registration Form
+  // Required meta tags
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  // Bootstrap CSS v5.2.1
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT' crossorigin='anonymous')
+  link(rel='stylesheet' href='css/form.css')
+header
+  // place navbar here
+main
+  .container
+    .row.justify-content-center.align-items-center.g-2
+      h2 Student Registration Form
+      form(action='/reg' method='POST' name='registration'  onsubmit='return validate();')
+        .col-lg-8
+          .row.justify-content-center.align-items-center.g-2
+            .col
+              label Sur name
+              input( name='userName' type='text')
+              small#userNameerr
+            .col-lg-10
+              label Given name
+              input( name='lastName' type='text')
+              small#lastNameerr
+            .col-lg-10
+              label Title
+              select(name='title' )
+                option(value='Select title')
+                option(value='Mr') Mr
+                option(value='Mrs') Mrs
+                option(value='Miss') Miss
+                option(value='Dr') Dr
+                option(value='Prof') Prof
+                option(value='Eng') Eng
+              small#titleerr
+            .col
+              label Upload photo
+              input( name='image' type='file')
+              small#imageerr
+            .col
+              label Gender
+              .form-radio
+                label
+                  | Male
+                  input( name='sex' type='radio' checked)
+                  small#sexerr
+                label
+                  | Female
+                  input( name='sex' type='radio')
+                  small#sexerr
+            .col
+              label Date of Birth*
+              input( name='date' type='date' max="2006-01-01")
+              small#dateerr
+            .col
+              label Country
+              select(name='country' )
+                option(value='Select country')
+                option(value='Uganda') Uganda
+                option(value='Kenya') Kenya
+                option(value='Tanzania') Tanzania
+                option(value='Rwanda') Rwanda
+                option(value='Burundi') Burundi
+              small#countryerr
+            .col
+              label Place of Residence
+              input( name='restype' type='text')
+              small#restypeerr
+            .col
+              label Nationality
+              input( name='nationality' type='text')
+              small#nationalityerr
+            button(type='submit') Register
+footer
+  // place footer here
+// Bootstrap JavaScript Libraries
+script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js' integrity='sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3' crossorigin='anonymous')
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js' integrity='sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz' crossorigin='anonymous')
+script(src='/js/validation.js')
