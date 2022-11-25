@@ -12,7 +12,7 @@ router.get('/reg', (req, res) =>{
 router.post('/reg', async (req, res) =>{
     try {
         const user = new Registration(req.body);
-        await Registration.register(user, req.body.password, (error) =>{
+        await Registration.register(user, req.body.userName, (error) =>{
             if (error) {
                 throw  error;
             }
